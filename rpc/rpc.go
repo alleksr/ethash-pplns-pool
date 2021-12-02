@@ -99,7 +99,7 @@ func (r *RPCClient) GetWork() ([]string, error) {
 }
 
 func (r *RPCClient) GetPendingBlock() (*GetBlockReplyPart, error) {
-	rpcResp, err := r.doPost(r.Url, "eth_getBlockByNumber", []interface{}{"latest", true})
+	rpcResp, err := r.doPost(r.Url, "eth_getBlockByNumber", []interface{}{"pending", true})
 	if err != nil {
 		return nil, err
 	}
